@@ -1,47 +1,48 @@
-📊 AuraCart Analytics Pro
+<div align="center">
 
-A modern, modular e-commerce scraping, analytics, and automation platform built with Python and CustomTkinter.
+# AuraCart Analytics Pro
 
-🚀 Overview
+**A modular Python desktop platform for e-commerce scraping, analytics, and automation.**
 
-AuraCart Analytics Pro is a desktop-based SaaS-style application designed to:
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square)](https://www.python.org/)
+[![GUI](https://img.shields.io/badge/GUI-CustomTkinter-purple?style=flat-square)](https://github.com/TomSchimansky/CustomTkinter)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-Scrape product data from e-commerce websites
-Store and manage structured product datasets
-Perform analytics on pricing, ratings, availability, and trends
-Export data in multiple formats
-Automate scraping through a built-in scheduler
+</div>
 
-It is built with a modular architecture, making it scalable for future upgrades like cloud deployment, API integration, or multi-user SaaS conversion.
+---
 
-✨ Key Features
-🕷️ Multi-Engine Scraping System
-Requests-based fast scraping
-Async scraping for performance
-Playwright support for dynamic websites
-📊 Analytics Dashboard
-Total products tracked
-Session tracking
-Average price & rating analysis
-Availability breakdown
-Trend visualization charts
-📦 Data Management
-Structured product storage
-Session tracking system
-PostgreSQL-ready architecture (optional upgrade)
-📤 Export System
-CSV export
-Excel export
-JSON export
-⏱️ Scheduler System
-Automated scraping at custom intervals
-Background execution support
-🖥️ Modern GUI
-Built with CustomTkinter
-Dark mode SaaS-style UI
-Sidebar navigation system
-Real-time logs & progress tracking
-🏗️ Project Architecture
+AuraCart Analytics Pro is a desktop application that scrapes product data from e-commerce sites, stores it in a structured database, surfaces analytics on pricing and availability, and lets you export or schedule everything — all from a modern dark-mode GUI.
+
+Built with a modular architecture, it's designed to scale toward cloud deployment, API integration, or multi-user SaaS conversion without major rewrites.
+
+---
+
+## Features
+
+### Scraping
+Three engines to match the site — fast requests-based scraping for static pages, async scraping for throughput, and Playwright for JavaScript-rendered content.
+
+### Analytics dashboard
+Tracks total products, sessions, average price, average rating, and availability breakdown. Trend charts update as new data comes in.
+
+### Data management
+Structured storage with session tracking. The database layer is built on SQLAlchemy — swap in PostgreSQL when you're ready to scale.
+
+### Export
+Push any dataset to CSV, Excel, or JSON in one click.
+
+### Scheduler
+Configure scraping intervals and let jobs run in the background. No manual re-triggering needed.
+
+### GUI
+Built with CustomTkinter. Dark-mode SaaS aesthetic, sidebar navigation, real-time logs, and a progress indicator for active scraping jobs.
+
+---
+
+## Project structure
+
+```
 AuraCartAnalyticsPro/
 │
 ├── main.py
@@ -49,79 +50,115 @@ AuraCartAnalyticsPro/
 │
 ├── app/
 │   ├── gui/              # Desktop UI (CustomTkinter)
-│   ├── scraping/        # Scraping engines
-│   ├── database/        # ORM + repository layer
-│   ├── analytics/       # Charts + statistics
-│   ├── exports/         # Export modules
-│   ├── scheduler/       # Automation system
+│   ├── scraping/         # Scraping engines
+│   ├── database/         # ORM + repository layer
+│   ├── analytics/        # Charts + statistics
+│   ├── exports/          # Export modules
+│   └── scheduler/        # Automation system
 │
-├── data/                # Local data storage
-├── exports/             # Exported files
-├── logs/                # System logs
-└── assets/              # UI assets
-⚙️ Installation
-1. Clone the repository
+├── data/                 # Local data storage
+├── exports/              # Exported files
+├── logs/                 # System logs
+└── assets/               # UI assets
+```
+
+---
+
+## Installation
+
+**1. Clone the repository**
+
+```bash
 git clone https://github.com/YOUR_USERNAME/AuraCartAnalyticsPro.git
 cd AuraCartAnalyticsPro
-2. Create virtual environment (recommended)
+```
+
+**2. Create a virtual environment** (recommended)
+
+```bash
 python -m venv venv
-source venv/bin/activate   # Mac/Linux
-venv\Scripts\activate      # Windows
-3. Install dependencies
+source venv/bin/activate      # macOS / Linux
+venv\Scripts\activate         # Windows
+```
+
+**3. Install dependencies**
+
+```bash
 pip install -r requirements.txt
-4. Install Playwright browsers
+```
+
+**4. Install Playwright browsers**
+
+```bash
 playwright install
-5. Run the application
+```
+
+**5. Run the application**
+
+```bash
 python main.py
-🧠 How It Works
-User enters a product URL in the GUI
-Scraper engine fetches and parses product data:
-Product name
-Price
-Rating
-Availability
-Data is stored in structured database
-Analytics engine processes insights
-Results are visualized in dashboard
-Export system allows data download
-📈 Example Use Cases
-Price tracking across e-commerce sites
-Competitor product analysis
-Market trend monitoring
-Product availability tracking
-Data collection for research projects
-🛠️ Tech Stack
-Frontend: CustomTkinter
-Backend: Python 3.10+
-Scraping: Requests, Asyncio, Playwright
-Data Processing: Pandas
-Visualization: Matplotlib
-Database: SQLAlchemy (PostgreSQL-ready)
-📌 Future Improvements
-Web dashboard version (Flask / FastAPI)
-Multi-user SaaS system
-Cloud scraping workers
-Proxy rotation system
-Real-time WebSocket analytics
-Docker deployment
-⚠️ Disclaimer
+```
 
-This tool is intended for:
+---
 
-Educational purposes
-Research and analysis
-Ethical data collection
+## How it works
 
-Users are responsible for complying with website terms of service.
+1. Paste a product URL into the GUI
+2. The scraper fetches product name, price, rating, and availability
+3. Data lands in the local database
+4. The analytics engine processes and visualizes insights in the dashboard
+5. Export any slice of the data whenever you need it
 
-👨‍💻 Author
+---
 
-Built as a full-stack Python architecture project demonstrating:
+## Tech stack
 
-Modular system design
-GUI application engineering
-Web scraping pipelines
-Data analytics workflows
-⭐ If you like this project
+| Layer | Library |
+|---|---|
+| GUI | CustomTkinter |
+| Scraping | Requests, Asyncio, Playwright |
+| Data processing | Pandas |
+| Visualization | Matplotlib |
+| Database | SQLAlchemy (PostgreSQL-ready) |
+| Runtime | Python 3.10+ |
 
-Give it a ⭐ on GitHub — it helps a lot!
+---
+
+## Use cases
+
+- Price tracking across multiple e-commerce sites
+- Competitor product analysis
+- Market trend monitoring
+- Product availability tracking
+- Research data collection
+
+---
+
+## Roadmap
+
+- [ ] Web dashboard (Flask / FastAPI)
+- [ ] Multi-user SaaS system
+- [ ] Cloud scraping workers
+- [ ] Proxy rotation
+- [ ] Real-time WebSocket analytics
+- [ ] Docker deployment
+
+---
+
+## Disclaimer
+
+This tool is intended for educational use, personal research, and ethical data collection. You are responsible for complying with the terms of service of any website you scrape.
+
+---
+
+## Author
+
+Built as a full-stack Python architecture project covering modular system design, GUI engineering, web scraping pipelines, and data analytics workflows.
+
+---
+
+<div align="center">
+
+If this project is useful to you, a ⭐ on GitHub goes a long way.
+
+</div>
