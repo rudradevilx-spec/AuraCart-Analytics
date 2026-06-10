@@ -1,0 +1,13 @@
+
+python-dotenv>=1.0.1
+customtkinter
+sqlalchemy
+requests
+beautifulsoup4
+lxml
+pandas
+openpyxl
+matplotlib
+aiohttp
+playwright
+schedule
